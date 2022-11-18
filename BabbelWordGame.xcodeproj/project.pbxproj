@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		0A7777EE2927B670004AE75F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7777ED2927B670004AE75F /* AppDelegate.swift */; };
 		0A7777F02927B670004AE75F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7777EF2927B670004AE75F /* SceneDelegate.swift */; };
-		0A7777F22927B670004AE75F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7777F12927B670004AE75F /* ViewController.swift */; };
-		0A7777F52927B670004AE75F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A7777F32927B670004AE75F /* Main.storyboard */; };
 		0A7777F72927B671004AE75F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A7777F62927B671004AE75F /* Assets.xcassets */; };
 		0A7777FA2927B671004AE75F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A7777F82927B671004AE75F /* LaunchScreen.storyboard */; };
 		0A7778052927B672004AE75F /* BabbelWordGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7778042927B672004AE75F /* BabbelWordGameTests.swift */; };
 		0A77780F2927B672004AE75F /* BabbelWordGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77780E2927B672004AE75F /* BabbelWordGameUITests.swift */; };
 		0A7778112927B672004AE75F /* BabbelWordGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7778102927B672004AE75F /* BabbelWordGameUITestsLaunchTests.swift */; };
+		0A7778242927BB52004AE75F /* WordsGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7778232927BB52004AE75F /* WordsGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +38,6 @@
 		0A7777EA2927B670004AE75F /* BabbelWordGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabbelWordGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A7777ED2927B670004AE75F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A7777EF2927B670004AE75F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0A7777F12927B670004AE75F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0A7777F42927B670004AE75F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A7777F62927B671004AE75F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A7777F92927B671004AE75F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A7777FB2927B671004AE75F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +46,7 @@
 		0A77780A2927B672004AE75F /* BabbelWordGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabbelWordGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A77780E2927B672004AE75F /* BabbelWordGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabbelWordGameUITests.swift; sourceTree = "<group>"; };
 		0A7778102927B672004AE75F /* BabbelWordGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabbelWordGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0A7778232927BB52004AE75F /* WordsGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +97,8 @@
 		0A7777EC2927B670004AE75F /* BabbelWordGame */ = {
 			isa = PBXGroup;
 			children = (
-				0A7777ED2927B670004AE75F /* AppDelegate.swift */,
-				0A7777EF2927B670004AE75F /* SceneDelegate.swift */,
-				0A7777F12927B670004AE75F /* ViewController.swift */,
-				0A7777F32927B670004AE75F /* Main.storyboard */,
-				0A7777F62927B671004AE75F /* Assets.xcassets */,
-				0A7777F82927B671004AE75F /* LaunchScreen.storyboard */,
-				0A7777FB2927B671004AE75F /* Info.plist */,
+				0A77781D2927BA3C004AE75F /* Source */,
+				0A77781E2927BA48004AE75F /* Ressources */,
 			);
 			path = BabbelWordGame;
 			sourceTree = "<group>";
@@ -125,6 +118,58 @@
 				0A7778102927B672004AE75F /* BabbelWordGameUITestsLaunchTests.swift */,
 			);
 			path = BabbelWordGameUITests;
+			sourceTree = "<group>";
+		};
+		0A77781D2927BA3C004AE75F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0A77781F2927BA5A004AE75F /* Core */,
+				0A7778202927BA67004AE75F /* Features */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		0A77781E2927BA48004AE75F /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				0A7777FB2927B671004AE75F /* Info.plist */,
+				0A7777F82927B671004AE75F /* LaunchScreen.storyboard */,
+				0A7777F62927B671004AE75F /* Assets.xcassets */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		0A77781F2927BA5A004AE75F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0A7778222927BB1D004AE75F /* AppDelegates */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		0A7778202927BA67004AE75F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				0A7778212927BB00004AE75F /* WordsGame */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		0A7778212927BB00004AE75F /* WordsGame */ = {
+			isa = PBXGroup;
+			children = (
+				0A7778232927BB52004AE75F /* WordsGameViewController.swift */,
+			);
+			path = WordsGame;
+			sourceTree = "<group>";
+		};
+		0A7778222927BB1D004AE75F /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				0A7777ED2927B670004AE75F /* AppDelegate.swift */,
+				0A7777EF2927B670004AE75F /* SceneDelegate.swift */,
+			);
+			path = AppDelegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +278,6 @@
 			files = (
 				0A7777FA2927B671004AE75F /* LaunchScreen.storyboard in Resources */,
 				0A7777F72927B671004AE75F /* Assets.xcassets in Resources */,
-				0A7777F52927B670004AE75F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +302,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A7777F22927B670004AE75F /* ViewController.swift in Sources */,
 				0A7777EE2927B670004AE75F /* AppDelegate.swift in Sources */,
 				0A7777F02927B670004AE75F /* SceneDelegate.swift in Sources */,
+				0A7778242927BB52004AE75F /* WordsGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +341,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0A7777F32927B670004AE75F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A7777F42927B670004AE75F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0A7777F82927B671004AE75F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -439,17 +475,19 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9W4STM7DA3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BabbelWordGame/Info.plist;
+				INFOPLIST_FILE = BabbelWordGame/Ressources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.educational-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.yasirromaye.BabbelWordGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -467,17 +505,19 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9W4STM7DA3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BabbelWordGame/Info.plist;
+				INFOPLIST_FILE = BabbelWordGame/Ressources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.educational-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.yasirromaye.BabbelWordGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

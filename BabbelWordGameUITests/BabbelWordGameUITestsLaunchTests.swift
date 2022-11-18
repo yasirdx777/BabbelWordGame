@@ -2,7 +2,7 @@
 //  BabbelWordGameUITestsLaunchTests.swift
 //  BabbelWordGameUITests
 //
-//  Created by iq on 11/18/22.
+//  Created by Yasir Romaya on 11/18/22.
 //
 
 import XCTest
