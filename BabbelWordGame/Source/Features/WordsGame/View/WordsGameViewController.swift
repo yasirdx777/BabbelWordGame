@@ -55,8 +55,45 @@ class WordsGameViewController: UIViewController, WordsGameViewControllerProtocol
         
     }
     
+    func animatePrimaryWordLabel() {
+        guard let customViewRef = customViewRef else { return }
+        
+        UIView.transition(with: customViewRef.primaryWordLabel,
+                          duration: TimeInterval(presenter!.roundTimerLimit),
+                          options: .curveLinear,
+                          animations: { [weak self] in
+            
+            guard let self = self else { return }
+            
+            let superViewHeight = self.customViewRef?.frame.height ?? 200
+
+            self.customViewRef?.primaryWordLabel.frame.origin.y += superViewHeight * 0.15
+        }, completion: nil)
+    }
+    
     func gameSessionEnded(wordsGameViewModel: WordsGameViewModel) {
-        exit(0)
+        let correctAttempts = wordsGameViewModel.correctAttempts ?? ""
+        let wrongAttempts = wordsGameViewModel.wrongAttempts ?? ""
+        
+        customViewRef?.correctAttemptsLabel.text = correctAttempts
+        customViewRef?.wrongAttemptsLabel.text = wrongAttempts
+        
+        let title = "Your Result"
+        let message = "\(correctAttempts)\n\(wrongAttempts)"
+        
+        let resultDialog = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        resultDialog.addAction(UIAlertAction(title: "Restart", style: .default, handler: { [weak self] _ in
+            guard let self = self else { return }
+            
+            self.presenter?.restart()
+        }))
+        
+        resultDialog.addAction(UIAlertAction(title: "Quit", style: .default, handler: { _ in
+            exit(0)
+        }))
+        
+        present(resultDialog, animated: true)
     }
     
 }

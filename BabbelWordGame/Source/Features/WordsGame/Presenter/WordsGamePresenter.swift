@@ -18,6 +18,7 @@ class WordsGamePresenter: WordsGamePresenterProtocol {
     private var timer: DispatchSourceTimer?
     
     private(set) var roundsLimit = 15
+    private(set) var roundTimerLimit = 5
     private(set) var roundTimer = 0
     private(set) var correctAttempts = 0
     private(set) var wrongAttempts = 0
@@ -71,6 +72,7 @@ class WordsGamePresenter: WordsGamePresenterProtocol {
         viewModel.primaryWordTranslation = wordPeer?.primaryWordTranslation
         
         viewController?.updateView(wordsGameViewModel: viewModel)
+        viewController?.animatePrimaryWordLabel()
         
         roundsLimit -= 1
     
@@ -103,13 +105,13 @@ class WordsGamePresenter: WordsGamePresenterProtocol {
     
     private func createTimer() {
         timer = DispatchSource.makeTimerSource(queue: .main)
-        timer?.schedule(deadline: .now(), repeating: 1.0)
+        timer?.schedule(deadline: .now(), repeating: 1.35)
         
         timer?.setEventHandler { [weak self] in
             guard let self = self else { return }
             self.roundTimer += 1
             
-            if self.roundTimer == 5 {
+            if self.roundTimer == self.roundTimerLimit {
                 self.wrongAttempts += 1
                 self.startNewRound()
             }

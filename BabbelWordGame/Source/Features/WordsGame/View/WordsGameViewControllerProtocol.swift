@@ -14,5 +14,6 @@ protocol WordsGameViewControllerProtocol: AnyObject {
     func hideLoadingIndicator()
     func showError(error: Error)
     func updateView(wordsGameViewModel: WordsGameViewModel)
+    func animatePrimaryWordLabel()
     func gameSessionEnded(wordsGameViewModel: WordsGameViewModel)
 }

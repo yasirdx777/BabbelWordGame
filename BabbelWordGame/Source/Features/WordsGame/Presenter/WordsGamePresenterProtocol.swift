@@ -12,6 +12,7 @@ protocol WordsGamePresenterProtocol: AnyObject {
     var router: WordsGameRouterProtocol? { get set }
     
     var roundTimer: Int { get }
+    var roundTimerLimit: Int { get }
     var roundsLimit: Int { get }
     var correctAttempts: Int { get }
     var wrongAttempts: Int { get }
@@ -22,4 +23,6 @@ protocol WordsGamePresenterProtocol: AnyObject {
     func startNewRound()
     func correctButtonAction()
     func wrongButtonAction()
+    
+    func restart()
 }
