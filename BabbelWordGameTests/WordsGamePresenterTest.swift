@@ -5,8 +5,6 @@
 //  Created by Yasir Romaya on 11/19/22.
 //
 
-import Foundation
-
 import XCTest
 @testable import BabbelWordGame
 
@@ -62,20 +60,39 @@ final class WordsGamePresenterTest: XCTestCase {
         presenter.startNewRound()
         
         let currentCorrectAttempts = presenter.correctAttempts
+        let currentRoundsLimit = presenter.roundsLimit
         
         presenter.correctButtonAction()
         
         XCTAssertEqual(presenter?.correctAttempts, currentCorrectAttempts + 1)
+        XCTAssertEqual(presenter?.roundsLimit, currentRoundsLimit - 1)
     }
     
     func testWrongButtonAction() {
         presenter.startNewRound()
         
         let currentWrongAttempts = presenter.wrongAttempts
+        let currentRoundsLimit = presenter.roundsLimit
         
         presenter.wrongButtonAction()
         
         XCTAssertEqual(presenter.wrongAttempts, currentWrongAttempts + 1)
+        XCTAssertEqual(presenter.roundsLimit, currentRoundsLimit - 1)
+    }
+    
+    func testRoundTimeOut() {
+        presenter.startNewRound()
+        
+        let currentWrongAttempts = presenter.wrongAttempts
+        let currentRoundsLimit = presenter.roundsLimit
+        
+        let secondsToDelay = 5.0
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) { [weak self] in
+            XCTAssertEqual(self?.presenter.wrongAttempts, currentWrongAttempts + 1)
+            XCTAssertEqual(self?.presenter.roundsLimit, currentRoundsLimit - 1)
+        }
+        
     }
     
 }

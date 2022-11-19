@@ -11,6 +11,8 @@ protocol WordsGamePresenterProtocol: AnyObject {
     var viewController: WordsGameViewControllerProtocol? { get set }
     var router: WordsGameRouterProtocol? { get set }
     
+    var roundTimer: Int { get }
+    var roundsLimit: Int { get }
     var correctAttempts: Int { get }
     var wrongAttempts: Int { get }
     var wordPeer: WordPeer? { get }

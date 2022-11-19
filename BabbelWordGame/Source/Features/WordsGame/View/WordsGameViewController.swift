@@ -55,4 +55,8 @@ class WordsGameViewController: UIViewController, WordsGameViewControllerProtocol
         
     }
     
+    func gameSessionEnded(wordsGameViewModel: WordsGameViewModel) {
+        exit(0)
+    }
+    
 }
